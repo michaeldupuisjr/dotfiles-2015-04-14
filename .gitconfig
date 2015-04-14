@@ -1,0 +1,38 @@
+[user]
+	name = Michael Dupuis Jr.
+	email = michael.dupuis@dockyard.com
+[color]
+  ui = true
+[branch]
+  autorebase = always
+[alias]
+  co = checkout
+  dt = difftool
+  po = push origin
+  st = status
+[push]
+  default = current
+[core]
+  excludesfile = /Users/michaeldupuisjr/.gitignore
+	autocrlf = true
+[difftool "Kaleidoscope"]
+[diff]
+[difftool]
+[mergetool "Kaleidoscope"]
+	trustexitcode = true
+[mergetool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope
+[fetch]
+  prune = true
+[alias]
+  delete-merged-branches = "!git branch --merged | grep -v master | xargs git branch -d"
+[diff]
+	tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false

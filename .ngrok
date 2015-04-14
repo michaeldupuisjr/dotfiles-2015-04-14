@@ -1,0 +1,8 @@
+auth_token: VrW4DThNcOD0vm1gGnSD
+
+tunnels:
+  stereolab:
+    hostname: "stereolab"
+    proto:
+      http: 3000
+      https: 3000

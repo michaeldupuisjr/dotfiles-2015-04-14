@@ -1,0 +1,20 @@
+call janus#disable_plugin('color')
+call janus#disable_plugin('css-color')
+set pastetoggle=<F7>
+let mapleader=","
+
+" Adds space after comment hash
+let g:NERDSpaceDelims = 1
+
+" Enables powerline fonts & symbols for vim airline
+let g:airline_powerline_fonts = 1
+
+" Prevents pause before inserting a new line above and entering insert mode.
+set timeout timeoutlen=1000 ttimeoutlen=100
+
+" Syntax highlighting
+au BufNewFile,BufRead *.emblem set filetype=slim
+au BufNewFile,BufRead *.es6 set filetype=javascript
+au BufNewFile,BufRead {Assetfile} set filetype=ruby
+
+" ctrlp ignores

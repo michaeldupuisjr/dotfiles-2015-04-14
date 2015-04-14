@@ -1,0 +1,16 @@
+/* Ignore vim temp files */
+*.swo
+*.swp
+
+*~
+*.lock
+*.DS_Store
+*.out
+
+/* Rails-specific */
+*.sqlite3
+config/database.yml
+log/*
+tmp/*
+
+.env
