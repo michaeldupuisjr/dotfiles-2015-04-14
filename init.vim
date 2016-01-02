@@ -6,20 +6,20 @@
 " General
 " ---------------------------------------------------------------------------
 
-set nocompatible			" use Vim settings, rather then Vi settings
-filetype off  				" no filetype detection (Vundle required)
-set history=100				" lines of command line history to keep
+set nocompatible      " use Vim settings, rather then Vi settings
+filetype off          " no filetype detection (Vundle required)
+set history=100       " lines of command line history to keep
 
 
 " ---------------------------------------------------------------------------
 " Vundle Plugins - to install, relaunch nvim and run :PluginInstall
 " ---------------------------------------------------------------------------
 
-set rtp+=~/.nvim/bundle/Vundle.vim	" set the runtime path to include Vundle
+set rtp+=~/.nvim/bundle/Vundle.vim              " set the runtime path to include Vundle
 
-call vundle#begin('~/.nvim/bundle/')			      " initialize Vundle (Vundle required)
+call vundle#begin('~/.nvim/bundle/')            " initialize Vundle (Vundle required)
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'gmarik/Vundle.vim'		                  " let Vundle manage Vundle (Vundle required)
+Plugin 'gmarik/Vundle.vim'                      " let Vundle manage Vundle (Vundle required)
 Plugin 'mileszs/ack.vim'                        " fuzzy file, buffer, mru, tag, etc finder
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -31,9 +31,9 @@ Plugin 'elixir-lang/vim-elixir'                 " configuration files for Elixir
 Plugin 'mustache/vim-mustache-handlebars'       " mustache and handlebars mode for vim
 Plugin 'pangloss/vim-javascript'                " vastly improved Javascript indentation and syntax support in Vim
 Plugin 'scrooloose/syntastic'                   " syntax checking hacks for vim
-call vundle#end()	        		                  " plugins above here (Vundle required)
+call vundle#end()                               " plugins above here (Vundle required)
 
-filetype plugin indent on		                    " (Vundle required)
+filetype plugin indent on                       " (Vundle required)
 
 " scrooloose/syntastic
 set statusline+=%#warningmsg#
@@ -59,10 +59,10 @@ set hlsearch    " also switch on highlighting the last used search pattern.
 
 set backspace=indent,eol,start                " allow backspacing over everything in insert mode
 set nowrap                                    " Switch wrap off for everything
-set number		                                " line numbers
+set number                                    " line numbers
 set pastetoggle=<F7>                          " Toggle paste-mode
-set ruler		                                  " show the cursor position all the time
-set showcmd		                                " display incomplete commands
+set ruler                                     " show the cursor position all the time
+set showcmd                                   " display incomplete commands
 set timeout timeoutlen=1000 ttimeoutlen=100   " prevents pause before inserting a new line above and entering insert mode
 set whichwrap+=<,>,h,l,[,]                    " backspace and cursor keys wrap to
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip      " exclude files and directories
@@ -74,7 +74,7 @@ set wildmode=list:longest,full
 " Visual Cues
 " ---------------------------------------------------------------------------
 
-set incsearch		" do incremental searching
+set incsearch       " do incremental searching
 
 
 " ---------------------------------------------------------------------------
@@ -108,25 +108,25 @@ nmap <leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 " Auto Commands
 " ---------------------------------------------------------------------------
 
-autocmd FileType javascript setlocal nocindent	" don't use cindent for javascript
-autocmd Filetype gitcommit setlocal spell textwidth=72   " turn on spell-check for git commit
+autocmd FileType javascript setlocal nocindent	          " don't use cindent for javascript
+autocmd Filetype gitcommit setlocal spell textwidth=72    " turn on spell-check for git commit
 
 
 " ---------------------------------------------------------------------------
 " File Types
 " ---------------------------------------------------------------------------
 
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown " force *.md as markdown (https://github.com/tpope/vim-markdown)
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown   " force *.md as markdown (https://github.com/tpope/vim-markdown)
 
 
 " ---------------------------------------------------------------------------
 " Backups
 " ---------------------------------------------------------------------------
 
-set nobackup                           " do not keep backups after close
-set nowritebackup                      " do not keep a backup while working
-set noswapfile                         " don't keep swp files either
-set backupdir=$HOME/.nvim/backup       " store backups under ~/.nvim/backup
-set backupcopy=yes                     " keep attributes of original file
+set nobackup                                      " do not keep backups after close
+set nowritebackup                                 " do not keep a backup while working
+set noswapfile                                    " don't keep swp files either
+set backupdir=$HOME/.nvim/backup                  " store backups under ~/.nvim/backup
+set backupcopy=yes                                " keep attributes of original file
 set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
-set directory=~/.nvim/swap,~/tmp,.     " keep swp files under ~/.nvim/swap
+set directory=~/.nvim/swap,~/tmp,.                " keep swp files under ~/.nvim/swap

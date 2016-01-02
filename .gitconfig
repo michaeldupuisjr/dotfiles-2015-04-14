@@ -7,32 +7,32 @@
   autorebase = always
 [alias]
   co = checkout
+  delete-merged-branches = "!git branch --merged | grep -v master | xargs git branch -d"
   dt = difftool
   po = push origin
   st = status
 [push]
   default = current
 [core]
+	autocrlf = input
   excludesfile = /Users/michaeldupuisjr/.gitignore
-  autocrlf = true
-[difftool "Kaleidoscope"]
-[diff]
-[difftool]
-[mergetool "Kaleidoscope"]
-	trustexitcode = true
-[mergetool]
-	prompt = false
+  editor = nvim
 [merge]
 	tool = Kaleidoscope
 [fetch]
   prune = true
-[alias]
-  delete-merged-branches = "!git branch --merged | grep -v master | xargs git branch -d"
 [diff]
 	tool = Kaleidoscope
+[mergetool]
+	prompt = false
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
