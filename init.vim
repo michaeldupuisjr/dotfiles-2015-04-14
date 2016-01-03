@@ -23,8 +23,9 @@ Plugin 'gmarik/Vundle.vim'                      " let Vundle manage Vundle (Vund
 Plugin 'mileszs/ack.vim'                        " fuzzy file, buffer, mru, tag, etc finder
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'                      " git wrapper
-Plugin 'tpope/vim-surround'                      " provides mappings for parentheses, brackets, etc.
+Plugin 'tpope/vim-fugitive'                     " git wrapper
+Plugin 'tpope/vim-surround'                     " provides mappings for parentheses, brackets, etc.
+Plugin 'vim-ruby/vim-ruby'                      " vim/ruby configuration files
 
 " syntax plugins
 Plugin 'elixir-lang/vim-elixir'                 " configuration files for Elixir
@@ -63,6 +64,7 @@ set number                                    " line numbers
 set pastetoggle=<F7>                          " Toggle paste-mode
 set ruler                                     " show the cursor position all the time
 set showcmd                                   " display incomplete commands
+set statusline+=%F                            " display full path of file
 set timeout timeoutlen=1000 ttimeoutlen=100   " prevents pause before inserting a new line above and entering insert mode
 set whichwrap+=<,>,h,l,[,]                    " backspace and cursor keys wrap to
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip      " exclude files and directories
