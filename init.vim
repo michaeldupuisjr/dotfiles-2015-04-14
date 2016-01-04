@@ -18,6 +18,7 @@ set history=100       " lines of command line history to keep
 set rtp+=~/.nvim/bundle/Vundle.vim              " set the runtime path to include Vundle
 
 call vundle#begin('~/.nvim/bundle/')            " initialize Vundle (Vundle required)
+Plugin 'altercation/vim-colors-solarized'       " colors - Solarized
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gmarik/Vundle.vim'                      " let Vundle manage Vundle (Vundle required)
 Plugin 'mileszs/ack.vim'                        " fuzzy file, buffer, mru, tag, etc finder
@@ -47,11 +48,13 @@ let g:syntastic_check_on_wq = 0
 
 
 " ---------------------------------------------------------------------------
-" Highlighting
+" Colors & Highlighting
 " ---------------------------------------------------------------------------
 
-syntax on       " switch syntax highlighting on, when the terminal has colors
-set hlsearch    " also switch on highlighting the last used search pattern.
+syntax enable             " switch syntax highlighting on, when the terminal has colors
+colorscheme solarized     " https://github.com/altercation/vim-colors-solarized#modify-vimrc
+set background=light      " https://github.com/altercation/vim-colors-solarized#modify-vimrc
+set hlsearch              " also switch on highlighting the last used search pattern.
 
 
 " ---------------------------------------------------------------------------
