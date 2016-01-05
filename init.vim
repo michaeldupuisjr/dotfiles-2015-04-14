@@ -21,6 +21,7 @@ call vundle#begin('~/.nvim/bundle/')            " initialize Vundle (Vundle requ
 Plugin 'altercation/vim-colors-solarized'       " colors - Solarized
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gmarik/Vundle.vim'                      " let Vundle manage Vundle (Vundle required)
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mileszs/ack.vim'                        " fuzzy file, buffer, mru, tag, etc finder
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -45,6 +46,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 3
+let g:syntastic_html_tidy_exec = 'tidy5'        " needed to brew install tidy-html5 for this
 
 
 " ---------------------------------------------------------------------------
@@ -116,6 +119,9 @@ nmap <leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 autocmd FileType javascript setlocal nocindent	          " don't use cindent for javascript
 autocmd Filetype gitcommit setlocal spell textwidth=72    " turn on spell-check for git commit
 
+autocmd VimEnter * NERDTree                               " http://stackoverflow.com/questions/1979520/auto-open-nerdtree-in-every-tab/7640505#7640505
+autocmd BufEnter * NERDTreeMirror
+autocmd VimEnter * wincmd w
 
 " ---------------------------------------------------------------------------
 " File Types
