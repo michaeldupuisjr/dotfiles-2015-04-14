@@ -56,8 +56,14 @@ let g:syntastic_html_tidy_exec = 'tidy5'        " needed to brew install tidy-ht
 
 syntax enable             " switch syntax highlighting on, when the terminal has colors
 colorscheme solarized     " https://github.com/altercation/vim-colors-solarized#modify-vimrc
-set background=light      " https://github.com/altercation/vim-colors-solarized#modify-vimrc
 set hlsearch              " also switch on highlighting the last used search pattern.
+
+" sets vim background color based on terminal profile colors
+if $COLORFGBG  == '12;8'
+  set background=dark     " https://github.com/altercation/vim-colors-solarized#modify-vimrc
+else
+  set background=light
+end
 
 
 " ---------------------------------------------------------------------------
