@@ -25,6 +25,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mileszs/ack.vim'                        " fuzzy file, buffer, mru, tag, etc finder
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-endwise'                      " wisely add `end` in ruby, endfunction/endif/more in vim script, etc
 Plugin 'tpope/vim-fugitive'                     " git wrapper
 Plugin 'tpope/vim-surround'                     " provides mappings for parentheses, brackets, etc.
 Plugin 'vim-ruby/vim-ruby'                      " vim/ruby configuration files
