@@ -71,17 +71,17 @@ end
 " UI
 " ---------------------------------------------------------------------------
 
-set backspace=indent,eol,start                " allow backspacing over everything in insert mode
-set nowrap                                    " Switch wrap off for everything
-set number                                    " line numbers
-set pastetoggle=<F7>                          " Toggle paste-mode
-set ruler                                     " show the cursor position all the time
-set showcmd                                   " display incomplete commands
-set statusline+=%F                            " display full path of file
-set timeout timeoutlen=1000 ttimeoutlen=100   " prevents pause before inserting a new line above and entering insert mode
-set whichwrap+=<,>,h,l,[,]                    " backspace and cursor keys wrap to
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip      " exclude files and directories
-set wildmenu                                  " turn on wild menu
+set backspace=indent,eol,start                                                        " allow backspacing over everything in insert mode
+set nowrap                                                                            " Switch wrap off for everything
+set number                                                                            " line numbers
+set pastetoggle=<F7>                                                                  " Toggle paste-mode
+set ruler                                                                             " show the cursor position all the time
+set showcmd                                                                           " display incomplete commands
+set statusline+=%F                                                                    " display full path of file
+set timeout timeoutlen=1000 ttimeoutlen=100                                           " prevents pause before inserting a new line above and entering insert mode
+set whichwrap+=<,>,h,l,[,]                                                            " backspace and cursor keys wrap to
+set wildignore+=*/tmp/*,*.o,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*    " exclude files and directories
+set wildmenu                                                                          " turn on wild menu
 set wildmode=list:longest,full
 
 
