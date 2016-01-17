@@ -18,7 +18,6 @@ set history=100       " lines of command line history to keep
 set rtp+=~/.nvim/bundle/Vundle.vim              " set the runtime path to include Vundle
 
 call vundle#begin('~/.nvim/bundle/')            " initialize Vundle (Vundle required)
-Plugin 'altercation/vim-colors-solarized'       " colors - Solarized
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gmarik/Vundle.vim'                      " let Vundle manage Vundle (Vundle required)
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -29,6 +28,10 @@ Plugin 'tpope/vim-endwise'                      " wisely add `end` in ruby, endf
 Plugin 'tpope/vim-fugitive'                     " git wrapper
 Plugin 'tpope/vim-surround'                     " provides mappings for parentheses, brackets, etc.
 Plugin 'vim-ruby/vim-ruby'                      " vim/ruby configuration files
+
+" themes
+Plugin 'altercation/vim-colors-solarized'       " colors - Solarized
+Plugin 'chriskempson/base16-vim'                " colors - base16
 
 " syntax plugins
 Plugin 'elixir-lang/vim-elixir'                 " configuration files for Elixir
@@ -55,13 +58,15 @@ let g:syntastic_html_tidy_exec = 'tidy5'        " needed to brew install tidy-ht
 " Colors & Highlighting
 " ---------------------------------------------------------------------------
 
-syntax enable             " switch syntax highlighting on, when the terminal has colors
-colorscheme solarized     " https://github.com/altercation/vim-colors-solarized#modify-vimrc
-set hlsearch              " also switch on highlighting the last used search pattern.
+syntax enable                   " switch syntax highlighting on, when the terminal has colors
+" colorscheme base16-atelierforest
+" colorscheme solarized
+colorscheme base16-tomorrow     
+set hlsearch                    " also switch on highlighting the last used search pattern.
 
 " sets vim background color based on terminal profile colors
-if $COLORFGBG  == '12;8'
-  set background=dark     " https://github.com/altercation/vim-colors-solarized#modify-vimrc
+if $COLORFGBG  == '12;8' || $COLORFGBG == '7;0'
+  set background=dark           " https://github.com/altercation/vim-colors-solarized#modify-vimrc
 else
   set background=light
 end
