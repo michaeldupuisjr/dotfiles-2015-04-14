@@ -20,7 +20,6 @@ set rtp+=~/.nvim/bundle/Vundle.vim              " set the runtime path to includ
 call vundle#begin('~/.nvim/bundle/')            " initialize Vundle (Vundle required)
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gmarik/Vundle.vim'                      " let Vundle manage Vundle (Vundle required)
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mileszs/ack.vim'                        " fuzzy file, buffer, mru, tag, etc finder
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -52,6 +51,61 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 3
 let g:syntastic_html_tidy_exec = 'tidy5'        " needed to brew install tidy-html5 for this
+
+" begin NERDTree from Janus
+" (https://github.com/carlhuda/janus/blob/fe6d16f778ba08380168370d099725e852384f6d/janus/vim/tools/janus/after/plugin/nerdtree.vim)
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
+
+augroup AuNERDTreeCmd
+autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
+
+" If the parameter is a directory, cd into it
+function s:CdIfDirectory(directory)
+  let explicitDirectory = isdirectory(a:directory)
+  let directory = explicitDirectory || empty(a:directory)
+
+  if explicitDirectory
+    exe "cd " . fnameescape(a:directory)
+  endif
+
+  " Allows reading from stdin
+  " ex: git diff | mvim -R -
+  if strlen(a:directory) == 0
+    return
+  endif
+
+  if directory
+    NERDTree
+    wincmd p
+    bd
+  endif
+
+  if explicitDirectory
+    wincmd p
+  endif
+endfunction
+
+" NERDTree utility function
+function s:UpdateNERDTree(...)
+  let stay = 0
+
+  if(exists("a:1"))
+    let stay = a:1
+  end
+
+  if exists("t:NERDTreeBufName")
+    let nr = bufwinnr(t:NERDTreeBufName)
+    if nr != -1
+      exe nr . "wincmd w"
+      exe substitute(mapcheck("R"), "<CR>", "", "")
+      if !stay
+        wincmd p
+      end
+    endif
+  endif
+endfunction
+" end NERDTree from Janus
 
 
 " ---------------------------------------------------------------------------
