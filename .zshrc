@@ -84,6 +84,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias nombom="rm -rf bower_components && rm -rf npm_modules && npm install && bower install"
+alias nombom="npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install"
 alias superrake="rake db:drop db:create db:migrate db:seed db:test:prepare"
 alias vim="nvim"
