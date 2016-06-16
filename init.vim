@@ -181,11 +181,11 @@ nmap <leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 autocmd FileType javascript setlocal nocindent	          " don't use cindent for javascript
 autocmd Filetype gitcommit setlocal spell textwidth=72    " turn on spell-check for git commit
 
-" autocmd VimEnter * NERDTree                               " http://stackoverflow.com/questions/1979520/auto-open-nerdtree-in-every-tab/7640505#7640505
-" autocmd BufEnter * NERDTreeMirror
-" augroup AuNERDTreeCmd
-" autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
-" autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
+autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif        " http://superuser.com/questions/554396/vim-prevent-nerdtree-opening-when-invoked-by-git
+autocmd BufEnter * NERDTreeMirror
+augroup AuNERDTreeCmd
+autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
 
 autocmd VimEnter * wincmd w
 
