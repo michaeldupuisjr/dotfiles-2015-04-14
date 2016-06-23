@@ -109,9 +109,9 @@ endfunction
 " ---------------------------------------------------------------------------
 
 syntax enable                   " switch syntax highlighting on, when the terminal has colors
-" colorscheme base16-atelierforest
+colorscheme base16-atelierforest
 " colorscheme solarized
-colorscheme base16-tomorrow     
+" colorscheme base16-tomorrow     
 set hlsearch                    " also switch on highlighting the last used search pattern.
 
 " sets vim background color based on terminal profile colors
