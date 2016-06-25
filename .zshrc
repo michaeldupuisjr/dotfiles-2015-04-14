@@ -58,6 +58,9 @@ export PATH="/Users/michaeldupuisjr/Development/adt-bundle-mac-x86_64-20131030/s
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# Postgress.app
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
