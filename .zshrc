@@ -88,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias nombom="npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install"
-alias superrake="rake db:drop db:create db:migrate db:seed db:test:prepare"
+alias superrake="bundle exec rake db:drop db:create db:migrate db:seed db:test:prepare"
 alias vim="nvim"
 
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
