@@ -92,3 +92,4 @@ alias superrake="bundle exec rake db:drop db:create db:migrate db:seed db:test:p
 alias vim="nvim"
 
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+export PATH="${PATH}:$HOME/.deliver/bin"
