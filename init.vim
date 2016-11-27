@@ -52,6 +52,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 3
 let g:syntastic_html_tidy_exec = 'tidy5'        " needed to brew install tidy-html5 for this
 
+" http://stackoverflow.com/a/28283797
+let g:syntastic_quiet_messages = { 'regex': 'File to import not found or unreadable: bootstrap-sprockets' }
+
 " begin NERDTree from Janus
 " (https://github.com/carlhuda/janus/blob/fe6d16f778ba08380168370d099725e852384f6d/janus/vim/tools/janus/after/plugin/nerdtree.vim)
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
